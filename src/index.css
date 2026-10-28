@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+@layer base {
+  @font-face {
+    font-family: 'Nikosh';
+    src: local('Nikosh'), local('NikoshBAN'),
+         url('https://cdn.jsdelivr.net/gh/mominul/fonts-bangla@master/Nikosh/Nikosh.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  html, body, button, input, select, textarea, table {
+    font-family: 'Nikosh', 'NikoshBAN', 'SolaimanLipi', 'Noto Sans Bengali', 'Hind Siliguri', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  }
+}
+
+/* Print styles for vouchers and financial reports */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  @page {
+    margin: 1.5cm;
+    size: A4;
+  }
+}
+
+/* Subtle Islamic geometric pattern background utility */
+.islamic-pattern {
+  background-color: #0d2c38;
+  background-image: radial-gradient(#155e75 1.2px, transparent 1.2px), radial-gradient(#0e7490 1.2px, #082531 1.2px);
+  background-size: 36px 36px;
+  background-position: 0 0, 18px 18px;
+}
+
+.islamic-header-gradient {
+  background: linear-gradient(135deg, #061e29 0%, #0c3327 35%, #14493a 70%, #092c30 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Smooth continuous marquee animation for notice ticker (zero-stop, never pauses) */
+@keyframes marqueeSeamless {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.seamless-marquee-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: marqueeSeamless 30s linear infinite;
+  pointer-events: none; /* Never stops on mouse hover */
+}
+
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marqueeScroll 24s linear infinite;
+}
+
+/* Back and forth bouncing notice animation option */
+@keyframes noticeBounce {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(25px);
+  }
+}
+
+.animate-notice-bounce {
+  animation: noticeBounce 3s ease-in-out infinite;
+}
+
+/* Card hover glow & subtle shimmer */
+.card-hover-glow {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover-glow:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px -10px rgba(16, 185, 129, 0.25);
+}
+
+/* Pulse glow for special badges */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+  }
+}
+
+.pulse-glow {
+  animation: pulseGlow 2s infinite;
+}

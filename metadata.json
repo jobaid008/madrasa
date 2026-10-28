@@ -1,0 +1,8 @@
+{
+  "name": "উত্তর দেশীবাই ফয়জুল উলুম ক্বওমী হাফেজিয়া মাদ্রাসা ও এতিমখানা",
+  "description": "Uttar Deshibai Faizul Uloom Qawmi Hafizia Madrasa & Orphanage - Financial Management System",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
